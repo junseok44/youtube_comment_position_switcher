@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Comment Viewer",
+  "version": "1.0",
+  "description": "YouTube 댓글을 영상 옆에 표시하는 확장 프로그램",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Comment Viewer",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
