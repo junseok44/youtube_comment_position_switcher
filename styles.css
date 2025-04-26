@@ -21,23 +21,3 @@
 #comments::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* 댓글 항목 스타일 */
-#comments ytd-comment-thread-renderer {
-  margin-bottom: 16px;
-  padding: 8px;
-  border-radius: 8px;
-  background: #f8f9fa;
-}
-
-/* 댓글 작성자 스타일 */
-#comments #author-text {
-  font-weight: bold;
-  color: #0f0f0f;
-}
-
-/* 댓글 내용 스타일 */
-#comments #content-text {
-  color: #0f0f0f;
-  line-height: 1.5;
-}
