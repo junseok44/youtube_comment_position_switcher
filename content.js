@@ -2,9 +2,9 @@ let isCommentViewerActive = false;
 
 // 유튜브 페이지가 로드될 때 실행
 document.addEventListener("yt-navigate-finish", function () {
-  if (window.location.pathname === "/watch") {
-    setTimeout(initializeCommentViewer, 1000);
-  }
+  //   if (window.location.pathname === "/watch") {
+  //     setTimeout(initializeCommentViewer, 1000);
+  //   }
 });
 
 // 메시지 수신
