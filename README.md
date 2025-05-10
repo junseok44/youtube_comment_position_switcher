@@ -1,25 +1,30 @@
-# YouTube Comment Viewer
+# YouTube Comment Position Switcher
 
-YouTube 댓글을 영상 옆에 표시하는 크롬 확장 프로그램입니다.
+A Chrome extension that allows you to switch the position of comments and related videos on YouTube for a better viewing experience.
 
-## 기능
+## Features
 
-- YouTube 영상 페이지에서 댓글을 영상 옆에 표시
-- 댓글 섹션을 고정된 높이로 유지하면서 스크롤 가능
-- 영상과 댓글을 동시에 볼 수 있는 편리한 인터페이스
+- Switch between comments and related videos positions on YouTube video pages
+- Maintain a fixed height for the comments section with scrollable content
+- Convenient interface to view both video and comments simultaneously
+- Persistent state across page refreshes and navigation
+- Works only on YouTube video pages
 
-## 설치 방법
+## Installation for Development
 
-1. Chrome 브라우저에서 `chrome://extensions/` 페이지를 열어주세요.
-2. 우측 상단의 "개발자 모드"를 활성화해주세요.
-3. "압축해제된拡張機能を読み込む" 버튼을 클릭하고, 이 프로젝트의 폴더를 선택해주세요.
+1. Open `chrome://extensions/` in your Chrome browser
+2. Enable "Developer mode" in the top right corner
+3. Click "Load unpacked" and select this project's folder
 
-## 사용 방법
+## How to Use
 
-1. YouTube 영상 페이지에 접속하면 자동으로 댓글이 영상 오른쪽에 표시됩니다.
-2. 댓글 섹션은 스크롤 가능하며, 영상과 함께 볼 수 있습니다.
+1. Navigate to any YouTube video page (URL containing `/watch?v=`)
+2. Click the extension icon in your browser toolbar
+3. Toggle the switch to change the position of comments and related videos
+4. Your preference will be saved and automatically applied to other video pages
 
-## 참고 사항
+## Notes
 
-- 이 확장 프로그램은 YouTube의 DOM 구조를 기반으로 작동합니다.
-- YouTube의 레이아웃이 변경될 경우 작동하지 않을 수 있습니다.
+- This extension works based on YouTube's DOM structure
+- It may not work if YouTube changes its layout
+- The extension only activates on video pages, not on the main page or other YouTube pages

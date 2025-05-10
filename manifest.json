@@ -1,13 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Comment Viewer",
+  "name": "Youtube Comment Position Switcher",
   "version": "1.0",
-  "description": "YouTube 댓글을 영상 옆에 표시하는 확장 프로그램",
-  "permissions": ["activeTab", "scripting"],
+  "description": "Enhance your YouTube viewing experience by freely switching between comments and related videos positions.",
+  "permissions": ["activeTab", "storage"],
   "host_permissions": ["*://*.youtube.com/*"],
   "action": {
-    "default_title": "YouTube Comment Viewer",
-    "default_popup": "popup.html"
+    "default_title": "Youtube Comment Position Switcher",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
   },
   "content_scripts": [
     {
