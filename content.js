@@ -1,21 +1,43 @@
 let isCommentViewerActive = false;
 
-// 유튜브 페이지가 로드될 때 실행
-document.addEventListener("yt-navigate-finish", function () {
-  //   if (window.location.pathname === "/watch") {
-  //     setTimeout(initializeCommentViewer, 1000);
-  //   }
-});
+// URL이 동영상 페이지인지 확인
+function isVideoPage() {
+  return (
+    window.location.pathname === "/watch" &&
+    window.location.search.includes("v=")
+  );
+}
+
+// localStorage에서 상태 복원
+function restoreCommentViewerState() {
+  const savedState = localStorage.getItem("commentViewerActive");
+
+  if (savedState === null) {
+    localStorage.setItem("commentViewerActive", "true");
+    isCommentViewerActive = true;
+    activateCommentViewer();
+  } else if (savedState === "true") {
+    isCommentViewerActive = true;
+    activateCommentViewer();
+  }
+}
+
+// 페이지 로드 시 실행
+if (isVideoPage()) {
+  restoreCommentViewerState();
+}
 
 // 메시지 수신
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.action === "toggleComments") {
+  if (request.action === "toggleComments" && isVideoPage()) {
     if (isCommentViewerActive) {
       deactivateCommentViewer();
     } else {
       activateCommentViewer();
     }
     isCommentViewerActive = !isCommentViewerActive;
+    // 상태 저장
+    localStorage.setItem("commentViewerActive", isCommentViewerActive);
   }
 });
 
