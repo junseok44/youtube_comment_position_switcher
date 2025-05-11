@@ -27,6 +27,24 @@ if (isVideoPage()) {
   restoreCommentViewerState();
 }
 
+// ✅ 이후 URL 변경 감지
+let lastUrl = location.href;
+
+const observer = new MutationObserver(() => {
+  const currentUrl = location.href;
+  if (currentUrl !== lastUrl) {
+    lastUrl = currentUrl;
+
+    if (isVideoPage()) {
+      setTimeout(() => {
+        restoreCommentViewerState();
+      }, 1000);
+    }
+  }
+});
+
+observer.observe(document, { subtree: true, childList: true });
+
 // 메시지 수신
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "toggleComments" && isVideoPage()) {
@@ -99,7 +117,7 @@ function activateCommentViewer() {
   }
 
   // secondary 컨테이너 스타일 조정
-  secondaryContainer.style.cssText = `
+  secondaryContainer.style.cssText = `  
     width: 400px;
     background: transparent;
     padding: 20px;
