@@ -60,9 +60,13 @@ function restoreCommentViewerState() {
 }
 
 function startCommentViewer() {
-    setTimeout(() => {
+  waitForElement("#columns")
+    .then(() => {
       restoreCommentViewerState();
-    }, 1000);
+    })
+    .catch((err) => {
+      console.warn("초기화 실패:", err);
+    });
 }
 
 // 최초 진입 시 처리
