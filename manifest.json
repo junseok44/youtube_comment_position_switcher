@@ -3,7 +3,7 @@
   "name": "Youtube Comment Position Switcher",
   "version": "1.0",
   "description": "Enhance your YouTube viewing experience by freely switching between comments and related videos positions.",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab"],
   "host_permissions": ["*://*.youtube.com/*"],
   "action": {
     "default_title": "Youtube Comment Position Switcher",
